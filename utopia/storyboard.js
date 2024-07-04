@@ -1,20 +1,37 @@
 import * as React from 'react'
-import { Storyboard, Scene } from 'utopia-api'
-import { App } from '/src/App.tsx'
+import { Scene, Storyboard } from 'utopia-api'
+import { App } from '/src/app.js'
+import { Playground } from '/src/playground.js'
 
-var storyboard = (
+export var storyboard = (
   <Storyboard>
     <Scene
+      id='playground-scene'
+      commentId='playground-scene'
       style={{
+        width: 700,
+        height: 759,
         position: 'absolute',
-        left: 0,
-        top: 0,
-        width: 375,
-        height: 812,
+        left: 212,
+        top: 128,
       }}
-      commentId='scene-1'
+      data-label='Playground'
     >
-      <App />
+      <Playground style={{}} />
+    </Scene>
+    <Scene
+      id='app-scene'
+      commentId='app-scene'
+      style={{
+        width: 744,
+        height: 1133,
+        position: 'absolute',
+        left: 1036,
+        top: 128,
+      }}
+      data-label='My App'
+    >
+      <App style={{}} />
     </Scene>
   </Storyboard>
 )
